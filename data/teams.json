@@ -1,0 +1,22 @@
+{
+    "1" : {
+        "team-name" : "Team 1",
+        "team-count" : 0
+    },
+    "2" : {
+        "team-name" : "Team 2",
+        "team-count" : 0
+    },
+    "3" : {
+        "team-name" : "Team 3",
+        "team-count" : 0
+    },
+    "4" : {
+        "team-name" : "Team 4",
+        "team-count" : 0
+    },
+    "5" : {
+        "team-name" : "Team 5",
+        "team-count" : 0
+    }
+}
