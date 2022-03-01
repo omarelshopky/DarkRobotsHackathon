@@ -1,0 +1,30 @@
+{
+    "1" : {
+        "name" : "Opening",
+        "start" : "10:00"
+    },
+    "2" : {
+        "name" : "Teams Formation",
+        "start" : "10:15"
+    },
+    "3" : {
+        "name" : "1st Invasion",
+        "start" : "10:30"
+    },
+    "4" : {
+        "name" : "Break",
+        "start" : "12:00"
+    },
+    "5" : {
+        "name" : "2nd Invasion",
+        "start" : "12:30"
+    },
+    "6" : {
+        "name" : "Competition",
+        "start" : "2:45" 
+    },
+    "7" : {
+        "name" : "Announcing Winners",
+        "start" : "3:45" 
+    }
+}
