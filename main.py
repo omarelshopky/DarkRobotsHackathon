@@ -12,10 +12,4 @@ def home():
 @app.route("/teams-formation")
 def teams_formation():
     return render_template('teams-formation.html', title='Team Formation')
-
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
     
