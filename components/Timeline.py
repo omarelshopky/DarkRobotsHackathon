@@ -39,7 +39,3 @@ class Timeline:
         elif sign == '<=':
             return datetime.strptime(stime1, fileHandler.config['TIME_FORMATE']) <= datetime.strptime(stime2, fileHandler.config['TIME_FORMATE'])
 
-
-
-time = Timeline()
-print(time.current())
