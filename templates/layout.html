@@ -20,11 +20,12 @@
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
+             
           <a class="navbar-brand mr-4" href="/">DarkRobots Hackathon 22'</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="collapse navbar-collapse" id="navbarToggle"> 
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="/">Home</a>
               <a class="nav-item nav-link" href="/scoreboard">Scoreboard</a>
@@ -34,6 +35,7 @@
               <a class="nav-item nav-link" href="/teams-formation">Teams Formation</a>
               <a class="nav-item nav-link" href="/timeline">Timeline</a>
             </div>
+            <img src="{{url_for('static', filename='logo.png')}}" height="40px" width="40px" alt="Timeline Image"/>
           </div>
         </div>
       </nav>
@@ -42,6 +44,7 @@
       <div class="row">
         {% block content %}{% endblock %}
       </div>
+      <h6 style="text-align:center">Developed By: <a href="https://github.com/omarelshopky">Omar Elshopky</a></h6>
     </main>
 
 
