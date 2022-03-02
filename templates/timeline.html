@@ -1,6 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1>{{ title }}</h1>
-    <br>
-    <img class="col-md-12" src="{{url_for('static', filename='Timeline.png')}}" alt="Timeline Image"/>  
+    <div class="col-md-8">
+        <h1>{{ title }}</h1>
+        <br>
+        <img class="col-md-12" src="{{url_for('static', filename='Timeline.png')}}" alt="Timeline Image"/>  
+    </div>
 {% endblock content %}
