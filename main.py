@@ -9,7 +9,19 @@ def home():
     return render_template('home.html')
 
 
+@app.route("/scoreboard")
+def scoreboard():
+    return render_template('scoreboard.html', title='Scoreboard')
+
+
 @app.route("/teams-formation")
 def teams_formation():
-    return render_template('teams-formation.html', title='Team Formation')
+    return render_template('teams-formation.html', title='Teams Formation')
+
+
+@app.route("/timeline")
+def timeline():
+    return render_template('timeline.html', title='Timeline')
+
+
     
