@@ -1,11 +1,11 @@
 from components.globals import fileHandler, timeline
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 class Timeline:
     
     def current(self):
-        now = datetime.now()
+        now = datetime.now() + timedelta(hours=2)
         timeNow = now.strftime(fileHandler.config["TIME_FORMATE"])
         
         if now.strftime("%m/%d/%y") != fileHandler.config["HACKATHON_DATE"] or self.compareWithCurrentTime(fileHandler.config["HACKATHON_END"], ">="):
@@ -28,7 +28,7 @@ class Timeline:
                         return ret
 
     def compareWithCurrentTime(self, stime, sign):
-        timeNow = datetime.now().strftime(fileHandler.config["TIME_FORMATE"])
+        timeNow = (datetime.now() + timedelta(hours=2)).strftime(fileHandler.config["TIME_FORMATE"])
         
         if sign == '==':
             return datetime.strptime(timeNow, fileHandler.config['TIME_FORMATE']) == datetime.strptime(stime, fileHandler.config['TIME_FORMATE'])

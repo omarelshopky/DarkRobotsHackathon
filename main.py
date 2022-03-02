@@ -3,6 +3,7 @@ from components.TeamFormater import TeamFormater
 from components.Timeline import Timeline
 from components.globals import fileHandler
 
+
 app = Flask(__name__)
 teamFormater = TeamFormater()
 timelineHelper = Timeline()
