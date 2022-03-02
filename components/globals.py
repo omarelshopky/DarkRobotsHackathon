@@ -1,4 +1,5 @@
-from FileHandler import FileHandler
+from components.FileHandler import FileHandler
+
 
 fileHandler = FileHandler()
 timeline = fileHandler.loadTimeline()
