@@ -1,17 +1,52 @@
 {% extends "layout.html" %}
 {% block content %}
-  <div class="col-md-12">
+  <div class="col-md-6 offset-md-3">
     <article class="media content-section">
       <div class="media-body">
         <div class="article-metadata">
-          <a class="mr-2" href="#"> Test </a>
-          <small class="text-muted">Test</small>
+          <h3>Current Stage</h3>
         </div>
-        <h2><a class="article-title" href="#">Test</a></h2>
-        <p class="article-content">Test</p>
+        <h4 class="article-title" style="text-align:center">{{ stage[0] }}</h4>
+        <p class="article-content" style="text-align: center" id="countdown">00:00</p>
       </div>
     </article>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+  <script>
+    let se = moment("{{ stage[1] }}", 'hh:mm A').format('HH:mm')
+    var stagedEnd = new Date(2022, 2, 2, parseInt(se[0]+se[1]), parseInt(se[3]+se[4]))
+    console.log(stagedEnd)
 
+    function msToTime(s) {
+      // Pad to 2 or 3 digits, default is 2
+      function pad(n, z) {
+        z = z || 2;
+        return ('00' + n).slice(-z);
+      }
+    
+      var ms = s % 1000;
+      s = (s - ms) / 1000;
+      var secs = s % 60;
+      s = (s - secs) / 60;
+      var mins = s % 60;
+      var hrs = (s - mins) / 60;
+    
+      return pad(hrs) + ':' + pad(mins) + ':' + pad(secs);
+    }
+    
+    if ("{{ stage[1] }}" != "00:00") {
+      counts = setInterval(update, 1000);
+    
+      function update(){
+        diff = stagedEnd - new Date()
+        if (diff <= 0) {
+          clearInterval(counts);
+          location.reload();
+        } else {
+          document.getElementById("countdown").innerHTML = msToTime(diff);
+        }
+      }
+    }
+    </script>	
   {% include 'scoreboard-rect.html' %}
 {% endblock content %}
