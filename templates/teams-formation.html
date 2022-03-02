@@ -1,7 +1,42 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div class="col-md-8">
+    <div class="col-md-12">
         <h1>{{ title }}</h1>
         <br>
+        <h4 class="offset-md-4 col-md-4" style="text-align:center">You are in team number</h4>
+        <br><br>
+        {% if team %}
+            <h1 class="offset-md-4 col-md-4" style="text-align:center; font-size:10rem" id="team-num">{{ team }}</h1>
+        {% else %}
+            <h1 class="offset-md-4 col-md-4" style="text-align:center; font-size:10rem" id="team-num"> - </h1>
+        {% endif %}
+        
+        <br><br>
+        {% if (isEnabled) and (not team) %}
+            <button class="btn btn-outline-info btn-lg offset-4" type="submit" onclick="count()">Join Team</button>
+        {% else %}
+            <button class="btn btn-outline-info btn-lg offset-4" type="submit" onclick="count()" disabled>Join Team</button>
+        {% endif %}
+        <form method="post" action="/teams-formation" class="col-md-4 offset-md-4">
+            <button type="submit" id="join-team" hidden></button>
+        </form>
     </div>
+    <script>
+        let counts;
+        let moves;
+        function count(){
+            counts = setInterval(updated, 150);
+            moves = 0; 
+        }
+        function updated(){
+            var count = document.getElementById("team-num");
+            count.innerHTML = Math.floor(Math.random() * 5) + 1;
+            moves++;
+
+            if(moves===15) {
+                clearInterval(counts);
+                document.getElementById("join-team").click();
+            }
+        }
+    </script>
 {% endblock content %}
