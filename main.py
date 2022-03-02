@@ -26,7 +26,7 @@ def scoreboard():
 @app.route("/teams-formation", methods=["GET", "POST"])
 def teams_formation():
     team = request.cookies.get('teamNum')
-    isEnabled =  timelineHelper.compareWithCurrentTime(fileHandler.config["TEAM_FORMATION_START"], '>=') and timeline.compareWithCurrentTime(fileHandler.config["TEAM_FORMATION_END"], '<=')
+    isEnabled =  timelineHelper.compareWithCurrentTime(fileHandler.config["TEAM_FORMATION_START"], '>=') and timelineHelper.compareWithCurrentTime(fileHandler.config["TEAM_FORMATION_END"], '<=')
   
     if request.method == "POST" and team == None and isEnabled:
         team = teamFormater.assignToTeam()
