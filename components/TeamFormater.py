@@ -12,11 +12,21 @@ class TeamFormater:
         """ Assigns player to """
         # Load current teams data
         teams = fileHandler.loadTeams()
+        
+        # Check if there an empty teams
+        count = 0
+        for team in teams:
+            if teams[str(team)]["team-count"] == fileHandler.config["TEAMS_MAX"]:
+                count += 1
+
+        if count == len(teams):
+            return None
+
         while True:
-            randTeam = random.randint(1, fileHandler.config["TEAMS_COUNT"])
+            randTeam = random.randint(1, fileHandler.config["TEAMS_NUMBER"])
             if teams[str(randTeam)]["team-count"] != fileHandler.config["TEAMS_MAX"]:
                 self.increaseTeamCount(teams, randTeam)
-                break
+                return randTeam
     
     def orderTeams(self):
         teams = fileHandler.loadTeams()
