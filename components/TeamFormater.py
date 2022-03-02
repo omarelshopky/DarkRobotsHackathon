@@ -1,5 +1,6 @@
 import random
-from globals import fileHandler
+from components.globals import fileHandler
+
 class TeamFormater:
 
     def increaseTeamCount(self, teams, team_number):
@@ -16,3 +17,13 @@ class TeamFormater:
             if teams[str(randTeam)]["team-count"] != fileHandler.config["TEAMS_MAX"]:
                 self.increaseTeamCount(teams, randTeam)
                 break
+    
+    def orderTeams(self):
+        teams = fileHandler.loadTeams()
+        t = []
+        for team in teams:
+            t.append([teams[team]['points'], teams[team]['team-name']])
+            
+        t.sort(reverse=True)
+        return t
+    
