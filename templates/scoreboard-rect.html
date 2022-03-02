@@ -1,0 +1,15 @@
+<div class="col-md-6 offset-md-3">
+  <div class="content-section">
+    <h3>Scoreboard</h3>
+    <p class='text-muted'>According to Team's Points
+      <ul class="list-group">
+        {% for team in teams %}
+          <li class="list-group-item list-group-item-light">
+            <span class="float-left col-10">{{ loop.index }}. {{ team[1] }} </span>
+            <span class="float-right col-2">{{ team[0] }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    </p>
+  </div>
+</div>
