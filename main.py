@@ -11,8 +11,9 @@ timelineHelper = Timeline()
 @app.route("/")
 @app.route("/home")
 def home():
+    stage = timelineHelper.current() 
     teams = teamFormater.orderTeams()
-    return render_template("home.html", teams=teams)
+    return render_template("home.html", teams=teams, stage=stage)
 
 
 @app.route("/scoreboard")
