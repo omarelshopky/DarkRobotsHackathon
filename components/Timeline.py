@@ -9,11 +9,11 @@ class Timeline:
         timeNow = now.strftime(fileHandler.config["TIME_FORMATE"])
         
         if now.strftime("%m/%d/%y") != fileHandler.config["HACKATHON_DATE"] or self.compareWithCurrentTime(fileHandler.config["HACKATHON_END"], ">="):
-            return ["Finished", '0:00']
+            return ["Finished", '00:00']
         else:
             
             if self.compareWithCurrentTime(fileHandler.config["HACKATHON_START"], "<"):
-                return ["Doesn't Start Yet", fileHandler.config["HACKATHON_START"][:-3]]
+                return ["Doesn't Started Yet", fileHandler.config["HACKATHON_START"]]
 
             else:
                 for event in list(timeline.keys())[::-1]:
@@ -21,7 +21,7 @@ class Timeline:
                         ret = [timeline[event]["name"]]
 
                         if event == list(timeline.keys())[-1]:
-                            ret.append(fileHandler.config["HACKATHON_END"][:-3])
+                            ret.append(fileHandler.config["HACKATHON_END"])
                         else:
                             ret.append(timeline[str(int(event)+1)]["start"])
 
