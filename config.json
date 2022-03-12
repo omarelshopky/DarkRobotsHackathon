@@ -6,7 +6,7 @@
     "TEAM_FORMATION_START"  : "10:15 AM",
     "TEAM_FORMATION_END"    : "10:30 AM",
     "TEAMS_FILE"            : "./data/teams.json",
-    "TEAMS_NUMBER"          : 5,
+    "TEAMS_NUMBER"          : 4,
     "TEAMS_MAX"             : 5,
     "TIME_FORMATE"          : "%I:%M %p"
 }
